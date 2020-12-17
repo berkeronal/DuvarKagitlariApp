@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
         //TODO("do splash db (firebase) control")
         //do firebase version control"
         //just for usage
-        object : CountDownTimer(3000, 1000) {
+        object : CountDownTimer(1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 binding.txtCount.text = ((millisUntilFinished / 1000).toString())
                 //Toast.makeText(getApplicationContext(), "BİR HATA OLUŞTU", Toast.LENGTH_LONG).show();
