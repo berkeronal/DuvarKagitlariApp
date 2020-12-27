@@ -1,21 +1,28 @@
 package com.hdwallpaper.galatasaraywallpaper.galatasarayduvarkagitlari.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.hdwallpaper.galatasaraywallpaper.galatasarayduvarkagitlari.R
+import com.hdwallpaper.galatasaraywallpaper.galatasarayduvarkagitlari.databinding.FragmentCategoriesBinding
 
-class CategoriesFragment : Fragment() {
+class CategoriesFragment : Fragment(R.layout.fragment_categories) {
 
 
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_categories, container, false)
+    private var fragmentFirstBinding: FragmentCategoriesBinding? = null
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val binding = FragmentCategoriesBinding.bind(view)
+        fragmentFirstBinding = binding
+        binding.recyclerView.adapter
+    }
+
+    override fun onDestroyView() {
+        // Consider not storing the binding instance in a field
+        // if not needed.
+        fragmentFirstBinding = null
+        super.onDestroyView()
     }
 
 }
